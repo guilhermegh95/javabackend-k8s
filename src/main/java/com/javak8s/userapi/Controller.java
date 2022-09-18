@@ -1,8 +1,7 @@
 package com.javak8s.userapi;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -56,6 +55,36 @@ public class Controller {
         return usuarios;
     }
 
+    @GetMapping("/users/{cpf}")
+    public UserDTO getUsersFiltro(@PathVariable String cpf) {
+        for (UserDTO userFilter: usuarios) {
+            if (userFilter.getCpf().equals(cpf)) {
+                return userFilter;
+            }
+        }
+
+        return null;
+    }
+
+    //POST METHOD
+    @PostMapping("/newUser")
+    UserDTO inserir(@RequestBody UserDTO userDTO) {
+        userDTO.setDataCadastro(new Date());
+        usuarios.add(userDTO);
+        return userDTO;
+    }
+
+    //DELETE METHOD
+    @DeleteMapping("users/{cpf}")
+    public boolean remover(@PathVariable String cpf) {
+        for (UserDTO userFilter: usuarios) {
+            if(userFilter.getCpf().equals(cpf)) {
+                usuarios.remove(userFilter);
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }
