@@ -25,20 +25,20 @@ public class Controller {
         userDTO.setDataCadastro(new Date());
 
         UserDTO userDTO2 = new UserDTO();
-        userDTO.setNome("Luis");
-        userDTO.setCpf("456");
-        userDTO.setEndereco("rua b");
-        userDTO.setEmail("luis@email.com");
-        userDTO.setTelefone("1234-4321");
-        userDTO.setDataCadastro(new Date());
+        userDTO2.setNome("Luis");
+        userDTO2.setCpf("456");
+        userDTO2.setEndereco("rua b");
+        userDTO2.setEmail("luis@email.com");
+        userDTO2.setTelefone("1234-4321");
+        userDTO2.setDataCadastro(new Date());
 
         UserDTO userDTO3 = new UserDTO();
-        userDTO.setNome("Bruna");
-        userDTO.setCpf("678");
-        userDTO.setEndereco("rua c");
-        userDTO.setEmail("bruna@email.com");
-        userDTO.setTelefone("1234-4321");
-        userDTO.setDataCadastro(new Date());
+        userDTO3.setNome("Bruna");
+        userDTO3.setCpf("678");
+        userDTO3.setEndereco("rua c");
+        userDTO3.setEmail("bruna@email.com");
+        userDTO3.setTelefone("1234-4321");
+        userDTO3.setDataCadastro(new Date());
 
         usuarios.add(userDTO);
         usuarios.add(userDTO2);
